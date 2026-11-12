@@ -1,0 +1,77 @@
+<section class="bg-[#FAF7F5]">
+  <div
+    class="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 py-20 md:grid-cols-2 md:py-28"
+  >
+    <!-- Introduction -->
+    <div>
+      <p class="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-[#6B3F5B]">
+        Hello, I'm Esther
+      </p>
+
+      <h1 class="mb-6 text-4xl leading-tight font-bold text-[#252126] md:text-6xl">
+        Building thoughtful digital experiences.
+      </h1>
+
+      <p class="mb-8 max-w-xl text-base leading-8 text-[#6B6570] md:text-lg">
+        I'm a frontend developer passionate about creating clean, accessible,
+        and user-friendly web experiences.
+      </p>
+
+      <div class="flex flex-wrap gap-4">
+        <a
+          routerLink="/projects"
+          class="rounded-lg bg-[#6B3F5B] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#543047]"
+        >
+          View My Work
+        </a>
+
+        <a
+          routerLink="/contact"
+          class="rounded-lg border border-[#6B3F5B] px-6 py-3 text-sm font-semibold text-[#6B3F5B] transition-colors hover:bg-[#F0E8ED]"
+        >
+          Get in Touch
+        </a>
+      </div>
+    </div>
+
+    <div class="flex justify-center md:justify-end">
+      <div
+        class="flex aspect-[4/5] w-full max-w-sm items-center justify-center rounded-xl border border-[#EAE3E8] bg-[#F0E8ED]"
+      >
+        <p class="text-sm text-[#6B6570]">Your photograph goes here</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-white px-6 py-20 md:py-28">
+    <div class="mx-auto max-w-7xl">
+        <div class="mb-12 max-w-2xl">
+            <p class="mb-3 text-sm font-semi-bold uppercase tracking-[0.2em] text-[#6B3F5B]">
+                A little about me
+            </p>
+
+            <h2 class="mb-6 text-3xl font-bold text-[#252126] md:text-4xl">
+                Turning ideas into meaningful digital experiences
+            </h2>
+
+            <p class="text-base leading-8 text-[#6B6570]">
+                I'm a Software Engineering graduate and frontend developer who enjoys
+                building responsive, accessible, and intuitive web applications. I
+                enjoy combining thoughtful design with clean code to create experiences
+                that are both useful and enjoyable.
+            </p>
+        </div>
+
+        <a routerLink="/about" class="group inline-flex items-center gap-2 text-sm font-semibold text-[#6B3F5B] transition-colors hover:text-[#543047]">
+            More about me
+            <svg 
+                lucideArrowRight
+                [size]="16"
+                class="transition-transform group-hover:translate-x-1" 
+                aria-hidden="true"
+            ></svg>
+
+        </a>
+    </div>
+</section>
