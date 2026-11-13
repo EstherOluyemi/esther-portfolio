@@ -6,4 +6,21 @@ import { Component } from '@angular/core';
   styleUrl: './about.css',
   templateUrl: './about.html',
 })
-export class About {}
+export class About {
+  frontendSkills = [
+    'HTML',
+    'CSS',
+    'JavaScript',
+    'Angular',
+    'React',
+    'Tailwind CSS',
+  ];
+
+  tools = [
+    'Git',
+    'Github',
+    'VS Code',
+    'Figma',
+    'Vercel',
+  ];
+}
