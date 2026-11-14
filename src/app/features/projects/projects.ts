@@ -1,9 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ProjectService } from '../../core/services/project';
+import { ProjectCard } from '../../shared/components/project-card/project-card';
 
 @Component({
-  imports: [],
+  imports: [[ProjectCard]],
   selector: 'app-projects',
   styleUrl: './projects.css',
   templateUrl: './projects.html',
 })
-export class Projects {}
+export class Projects {
+
+  private projectService = inject(ProjectService);
+
+  projects = this.projectService.projects;
+}
