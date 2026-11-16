@@ -1,1 +1,46 @@
 @import "tailwindcss";
+
+html {
+    scroll-behavior: smooth;
+}
+
+.dark-theme body {
+    background-color: #1D1920;
+    color: #F8F4F8;
+}
+
+.dark-theme header,
+.dark-theme .bg-white {
+    background-color: #27212B !important;
+}
+
+.dark-theme section {
+    background-color: #1D1920 !important;
+}
+
+.dark-theme article {
+    background-color: #27212B;
+    border-color: #514657;
+}
+
+.dark-theme h1,
+.dark-theme h2,
+.dark-theme h3 {
+    color: #F8F4F8 !important;
+}
+
+.dark-theme p {
+    color: #C9BEC9 !important;
+}
+
+.dark-theme input,
+.dark-theme textarea {
+    background-color: #302936;
+    color: #F8F4F8;
+    border-color: #514657;
+}
+
+.dark-theme input::placeholder,
+.dark-theme textarea::placeholder {
+    color: #B5A9B9;
+}

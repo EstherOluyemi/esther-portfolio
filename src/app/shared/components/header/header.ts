@@ -1,9 +1,10 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { LucideMenu, LucideX } from '@lucide/angular';
+import { LucideMenu, LucideX, LucideSun, LucideMoon } from '@lucide/angular';
+import { ThemeService } from '../../../core/services/theme';
 
 @Component({
-  imports: [RouterLink, LucideMenu, LucideX],
+  imports: [RouterLink, LucideMenu, LucideX, LucideSun, LucideMoon],
   selector: 'app-header',
   styleUrl: './header.css',
   templateUrl: './header.html',
@@ -11,11 +12,19 @@ import { LucideMenu, LucideX } from '@lucide/angular';
 export class Header {
   isMenuOpen = signal(false);
 
-  toggleMenu(){
-    this.isMenuOpen.update((currentState) => !currentState); 
+  private themeService = inject(ThemeService);
+
+  theme = this.themeService.theme;
+
+  toggleTheme() {
+    this.themeService.toggleTheme();
   }
 
-  closeMenu(){
+  toggleMenu() {
+    this.isMenuOpen.update((currentState) => !currentState);
+  }
+
+  closeMenu() {
     this.isMenuOpen.set(false);
   }
 }
