@@ -2,8 +2,8 @@
     <div class="aspect-video overflow-hidden bg-[#F0E8ED]">
         @if (imageUrl()) {
             <img 
-            [src]="imageUrl!()"
-            [alt]="title() + 'project screenshot'"
+            [src]="imageUrl()"
+            [alt]="title() + ' project screenshot'"
             class="h-full w-full object-cover">
         }
         @else{

@@ -1,24 +1,26 @@
 <section class="bg-[#FAF7F5]">
   <div class="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 py-20 md:grid-cols-2 md:py-28">
-    <!-- Introduction -->
     <div>
       <p class="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-[#6B3F5B]">
         Hello, I'm Esther
       </p>
 
       <h1 class="mb-6 text-4xl leading-tight font-bold text-[#252126] md:text-6xl">
-        Building thoughtful digital experiences.
+        I build thoughtful, user-friendly experiences for the web.
       </h1>
 
       <p class="mb-8 max-w-xl text-base leading-8 text-[#6B6570] md:text-lg">
-        I'm a frontend developer passionate about creating clean, accessible,
-        and user-friendly web experiences.
+        I'm a Software Engineering graduate focused on frontend development.
+        I work with Angular, React, and TypeScript to turn ideas and designs
+        into responsive, accessible web interfaces.
       </p>
 
-      <div class="flex flex-wrap gap-4">
-        <a routerLink="/projects"
-          class="rounded-lg bg-[#6B3F5B] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#543047]">
-          View My Work
+      <div class="flex flex-wrap items-center gap-4">
+        <a href="#projects"
+          class="group inline-flex items-center gap-2 rounded-lg bg-[#6B3F5B] px-6 py-3 text-sm font-semibold text-white shadow-sm transition-all hover:bg-[#543047] hover:shadow-md">
+          <span>View My Work</span>
+          <svg lucideArrowDown [size]="16" class="transition-transform duration-300 group-hover:translate-y-0.5"
+            aria-hidden="true"></svg>
         </a>
 
         <a routerLink="/contact"
@@ -29,9 +31,9 @@
     </div>
 
     <div class="flex justify-center md:justify-end">
-      <div
-        class="flex aspect-[4/5] w-full max-w-sm items-center justify-center rounded-xl border border-[#EAE3E8] bg-[#F0E8ED]">
-        <p class="text-sm text-[#6B6570]">Your photograph goes here</p>
+      <div class="aspect-[4/5] w-full max-w-sm overflow-hidden rounded-xl border border-[#EAE3E8] bg-white">
+        <img src="/assets/images/esther-portrait.jpeg" alt="Portrait of Esther"
+          class="h-full w-full object-cover object-center" />
       </div>
     </div>
   </div>
@@ -60,7 +62,6 @@
       class="group inline-flex items-center gap-2 text-sm font-semibold text-[#6B3F5B] transition-colors hover:text-[#543047]">
       More about me
       <svg lucideArrowRight [size]="16" class="transition-transform group-hover:translate-x-1" aria-hidden="true"></svg>
-
     </a>
   </div>
 </section>
@@ -82,7 +83,6 @@
       </p>
     </div>
 
-    <!-- Project Cards -->
     <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
       @for (project of projects; track project.id) {
       <app-project-card [title]="project.title" [description]="project.description" [technology]="project.technology"

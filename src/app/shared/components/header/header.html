@@ -7,19 +7,28 @@
 
     <!-- Desktop Navigation -->
     <div class="hidden items-center gap-8 md:flex">
-      <a routerLink="/" class="text-sm font-medium text-[#6B3F5B]">
+      <a routerLink="/"
+        routerLinkActive="text-[#6B3F5B] font-semibold"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="text-sm text-[#6B6570] transition-colors hover:text-[#6B3F5B]">
         Home
       </a>
 
-      <a routerLink="/" fragment="about" class="text-sm text-gray-600 transition-colors hover:text-[#6B3F5B]">
+      <a routerLink="/about"
+        routerLinkActive="text-[#6B3F5B] font-semibold"
+        class="text-sm text-[#6B6570] transition-colors hover:text-[#6B3F5B]">
         About
       </a>
 
-      <a routerLink="/" fragment="projects" class="text-sm text-gray-600 transition-colors hover:text-[#6B3F5B]">
+      <a routerLink="/projects"
+        routerLinkActive="text-[#6B3F5B] font-semibold"
+        class="text-sm text-[#6B6570] transition-colors hover:text-[#6B3F5B]">
         Projects
       </a>
 
-      <a routerLink="/" fragment="contact" class="text-sm text-gray-600 transition-colors hover:text-[#6B3F5B]">
+      <a routerLink="/contact"
+        routerLinkActive="text-[#6B3F5B] font-semibold"
+        class="text-sm text-[#6B6570] transition-colors hover:text-[#6B3F5B]">
         Contact
       </a>
     </div>
@@ -35,7 +44,7 @@
     </button>
 
     <!-- Mobile Menu Button -->
-    <button type="button" (click)="toggleTheme()" (click)="toggleMenu()" [attr.aria-expanded]="isMenuOpen()"
+    <button type="button" (click)="toggleMenu()" [attr.aria-expanded]="isMenuOpen()"
       aria-label="Toggle navigation menu" class="rounded-md border border-[#EAE3E8] px-3 py-2 text-[#6B3F5B] md:hidden">
       @if (isMenuOpen()) {
       <svg lucideX [size]="22"></svg>
@@ -48,19 +57,32 @@
     @if (isMenuOpen()) {
     <div
       class="absolute left-0 top-full z-50 flex w-full flex-col gap-5 border-b border-[#EAE3E8] bg-white px-6 py-6 shadow-md md:hidden">
-      <a routerLink="/" (click)="closeMenu()" class="text-sm text-[#6B3F5B]">
+      <a routerLink="/"
+        routerLinkActive="text-[#6B3F5B] font-semibold"
+        [routerLinkActiveOptions]="{ exact: true }"
+        (click)="closeMenu()"
+        class="text-sm text-[#6B6570] transition-colors hover:text-[#6B3F5B]">
         Home
       </a>
 
-      <a routerLink="/" fragment="about" (click)="closeMenu()" class="text-sm text-gray-600">
+      <a routerLink="/about"
+        routerLinkActive="text-[#6B3F5B] font-semibold"
+        (click)="closeMenu()"
+        class="text-sm text-[#6B6570] transition-colors hover:text-[#6B3F5B]">
         About
       </a>
 
-      <a routerLink="/" fragment="projects" (click)="closeMenu()" class="text-sm text-gray-600">
+      <a routerLink="/projects"
+        routerLinkActive="text-[#6B3F5B] font-semibold"
+        (click)="closeMenu()"
+        class="text-sm text-[#6B6570] transition-colors hover:text-[#6B3F5B]">
         Projects
       </a>
 
-      <a routerLink="/" fragment="contact" (click)="closeMenu()" class="text-sm text-gray-600">
+      <a routerLink="/contact"
+        routerLinkActive="text-[#6B3F5B] font-semibold"
+        (click)="closeMenu()"
+        class="text-sm text-[#6B6570] transition-colors hover:text-[#6B3F5B]">
         Contact
       </a>
 
