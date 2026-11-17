@@ -10,17 +10,38 @@ html {
 }
 
 .dark-theme header,
+.dark-theme footer,
 .dark-theme .bg-white {
-    background-color: #27212B !important;
+    background-color: #27212B;
+}
+
+.dark-theme footer {
+    border-color: #514657;
 }
 
 .dark-theme section {
-    background-color: #1D1920 !important;
+    background-color: #1D1920;
 }
 
 .dark-theme article {
     background-color: #27212B;
     border-color: #514657;
+}
+
+.dark-theme .border-\[\#EAE3E8\] {
+    border-color: #514657;
+}
+
+.dark-theme .bg-\[\#F0E8ED\] {
+    background-color: #382C38;
+}
+
+.dark-theme .text-\[\#6B3F5B\] {
+    color: #E2AECF;
+}
+
+.dark-theme .text-\[\#6B6570\] {
+    color: #C9BEC9;
 }
 
 .dark-theme h1,

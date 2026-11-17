@@ -12,7 +12,7 @@ export class ProjectService {
             technology: 'Angular',
             githubUrl: 'https://github.com/EstherOluyemi/digital-hymn-book',
             liveUrl: 'https://digital-hymn-book.vercel.app/',
-            imageUrl: 'assets/images/hymnbook-ss.jpg',
+            imageUrl: '/assets/images/hymnbook-ss.jpg',
         },
         {
             id: 2,
@@ -21,7 +21,7 @@ export class ProjectService {
             technology: 'React',
             githubUrl: 'https://github.com/EstherOluyemi/Peer-Learning-system',
             liveUrl: 'https://peer-learning-system.vercel.app/',
-            imageUrl: 'assets/images/p2p-ss.jpg',
+            imageUrl: '/assets/images/p2p-ss.jpg',
         },
         {
             id: 3,
@@ -30,7 +30,7 @@ export class ProjectService {
             technology: 'Angular',
             githubUrl: 'https://github.com/EstherOluyemi/esther-portfolio',
             liveUrl: null,
-            imageUrl: 'assets/images/portfolio-ss.jpg',
+            imageUrl: '/assets/images/portfolio-ss.jpg',
         },
 
     ];

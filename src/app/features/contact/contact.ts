@@ -1,8 +1,9 @@
 import { Component, inject, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { LucideMail } from '@lucide/angular';
 
 @Component({
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, LucideMail],
   selector: 'app-contact',
   styleUrl: './contact.css',
   templateUrl: './contact.html',
@@ -27,7 +28,7 @@ export class Contact {
 
     console.log('Form submitted: ', this.contactForm.getRawValue());
 
-    this.feedbackMessage.set('Your message has been submitted successfull!');
+    this.feedbackMessage.set('Your message has been submitted successfully!');
 
     this.contactForm.reset();
   }

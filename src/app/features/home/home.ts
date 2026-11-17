@@ -11,8 +11,6 @@ import { ProjectService } from '../../core/services/project';
   templateUrl: './home.html',
 })
 export class Home {
-
   private projectService = inject(ProjectService);
   projects = this.projectService.projects;
-
 }
