@@ -20,15 +20,34 @@
         <div class="grid grid-cols-1 items-start gap-12 lg:grid-cols-12">
 
             <div class="rounded-xl border border-[#EAE3E8] bg-white p-8 shadow-xs lg:col-span-7">
+
+                @if (feedbackMessage()) {
+                <div class="flex flex-col items-center justify-center py-12 text-center">
+                    <div class="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#F0E8ED]">
+                        <svg class="h-8 w-8 text-[#6B3F5B]" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M20 6 9 17l-5-5" />
+                        </svg>
+                    </div>
+                    <h2 class="mb-3 text-2xl font-bold text-[#252126]">Message Sent!</h2>
+                    <p class="mb-8 max-w-sm text-sm leading-7 text-[#6B6570]">
+                        Thank you for reaching out. I'll get back to you as soon as possible.
+                    </p>
+                    <button type="button" (click)="resetForm()"
+                        class="rounded-lg border border-[#6B3F5B] px-6 py-2.5 text-sm font-semibold text-[#6B3F5B] transition-colors hover:bg-[#F0E8ED]">
+                        Send another message
+                    </button>
+                </div>
+                } @else {
                 <h2 class="mb-6 text-2xl font-bold text-[#252126]">
                     Send me a message
                 </h2>
 
                 <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" (input)="clearFeedback()" class="space-y-6">
 
-                    @if (feedbackMessage()) {
-                    <div class="rounded-lg border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-700">
-                        {{ feedbackMessage() }}
+                    @if (errorMessage()) {
+                    <div class="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+                        {{ errorMessage() }}
                     </div>
                     }
 
@@ -85,12 +104,13 @@
                             class="w-full resize-y rounded-lg border border-[#EAE3E8] px-4 py-3 text-sm outline-none transition-colors focus:border-[#6B3F5B] focus:ring-1 focus:ring-[#6B3F5B]/20"></textarea>
                     </div>
 
-                    <button type="submit"
-                        class="w-full rounded-lg bg-[#6B3F5B] px-6 py-3.5 text-sm font-semibold text-white shadow-xs transition-colors hover:bg-[#543047]">
-                        Send Message
+                    <button type="submit" [disabled]="isSubmitting()"
+                        class="w-full rounded-lg bg-[#6B3F5B] px-6 py-3.5 text-sm font-semibold text-white shadow-xs transition-colors hover:bg-[#543047] disabled:cursor-not-allowed disabled:opacity-60">
+                        {{ isSubmitting() ? 'Sending...' : 'Send Message' }}
                     </button>
 
                 </form>
+                }
             </div>
 
             <div class="lg:col-span-5">
@@ -164,7 +184,8 @@
                                 LinkedIn
                             </h3>
 
-                            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer"
+                            <a href="https://www.linkedin.com/in/esther-oluyemi/" target="_blank"
+                                rel="noopener noreferrer"
                                 class="text-sm text-[#6B6570] transition-colors hover:text-[#6B3F5B]">
                                 linkedin.com/in/esther-oluyemi/
                             </a>

@@ -29,7 +29,7 @@ export class ProjectService {
             description: 'A personal portfolio showcasing my frontend development skills and projects.',
             technology: 'Angular',
             githubUrl: 'https://github.com/EstherOluyemi/esther-portfolio',
-            liveUrl: null,
+            liveUrl: 'https://esther-portfolio-tan-six.vercel.app/',
             imageUrl: '/assets/images/portfolio-ss.jpg',
         },
 

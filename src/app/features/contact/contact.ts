@@ -1,3 +1,4 @@
+
 import { Component, inject, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { LucideMail } from '@lucide/angular';
@@ -12,28 +13,65 @@ export class Contact {
   private fb = inject(FormBuilder);
 
   feedbackMessage = signal('');
+  errorMessage = signal('');
+  isSubmitting = signal(false);
 
   contactForm = this.fb.nonNullable.group({
     name: ['', Validators.required],
     email: ['', [Validators.required, Validators.email]],
     subject: ['', Validators.required],
     message: ['', [Validators.required, Validators.minLength(10)]],
-  })
+  });
 
-  onSubmit(): void {
+  async onSubmit(): Promise<void> {
     if (this.contactForm.invalid) {
       this.contactForm.markAllAsTouched();
       return;
     }
 
-    console.log('Form submitted: ', this.contactForm.getRawValue());
+    this.isSubmitting.set(true);
+    this.feedbackMessage.set('');
+    this.errorMessage.set('');
 
-    this.feedbackMessage.set('Your message has been submitted successfully!');
+    try {
+      const response = await fetch(
+        'https://formspree.io/f/myewdgpw',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+          body: JSON.stringify(this.contactForm.getRawValue()),
+        }
+      );
 
-    this.contactForm.reset();
+      if (!response.ok) {
+        throw new Error('Message submission failed.');
+      }
+
+      this.feedbackMessage.set(
+        'Your message has been sent successfully!'
+      );
+
+      this.contactForm.reset();
+    } catch {
+      this.errorMessage.set(
+        'Sorry, your message could not be sent. Please try again.'
+      );
+    } finally {
+      this.isSubmitting.set(false);
+    }
   }
 
   clearFeedback(): void {
     this.feedbackMessage.set('');
+    this.errorMessage.set('');
+  }
+
+  resetForm(): void {
+    this.feedbackMessage.set('');
+    this.errorMessage.set('');
+    this.contactForm.reset();
   }
 }

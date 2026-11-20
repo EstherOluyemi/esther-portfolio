@@ -1,5 +1,5 @@
-import { Component, inject } from '@angular/core';
-import { RouterLink, Router } from '@angular/router';
+import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   imports: [RouterLink],
@@ -8,7 +8,6 @@ import { RouterLink, Router } from '@angular/router';
   templateUrl: './about.html',
 })
 export class About {
-  private router = inject(Router);
   frontendSkills = [
     'HTML',
     'CSS',
@@ -20,19 +19,8 @@ export class About {
 
   tools = [
     'Git',
-    'Github',
+    'GitHub',
     'VS Code',
     'Vercel',
   ];
-
-  scrollToProjects() {
-    this.router.navigate(['/']).then(() => {
-      setTimeout(() => {
-        document.getElementById('projects')?.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start',
-        });
-      }, 100);
-    });
-  }
 }

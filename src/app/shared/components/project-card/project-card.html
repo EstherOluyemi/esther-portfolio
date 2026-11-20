@@ -1,13 +1,12 @@
-<article class="flex flex-col overflow-hidden rounded-xl border border-[#EAE3E8] bg-white transition-shadow hover:shadow-lg">
+<article
+    class="flex flex-col overflow-hidden rounded-xl border border-[#EAE3E8] bg-white transition-shadow hover:shadow-lg">
     <div class="p-4 pb-0">
         <div class="flex aspect-video items-center justify-center overflow-hidden rounded-lg bg-[#F0E8ED]">
             @if (imageUrl()) {
-                <img 
-                    [src]="imageUrl()"
-                    [alt]="title() + ' project screenshot'"
-                    class="h-full w-full object-cover object-center transition-transform duration-300 hover:scale-105">
+            <img [src]="imageUrl()" [alt]="title() + ' project screenshot'"
+                class="h-full w-full object-cover object-center transition-transform duration-300 hover:scale-105">
             } @else {
-                <span class="text-sm text-[#6B6570]">Project Preview</span>
+            <span class="text-sm text-[#6B6570]">Project Preview</span>
             }
         </div>
     </div>
@@ -28,23 +27,17 @@
 
             <div class="mt-6 flex items-center gap-4">
                 @if (githubUrl()) {
-                    <a 
-                        [href]="githubUrl()"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="text-sm font-semibold text-[#6B3F5B] hover:underline">
-                        Github
-                    </a>
+                <a [href]="githubUrl()" target="_blank" rel="noopener noreferrer"
+                    class="text-sm font-semibold text-[#6B3F5B] hover:underline">
+                    GitHub
+                </a>
                 }
 
                 @if (liveUrl()) {
-                    <a 
-                        [href]="liveUrl()"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="text-sm font-semibold text-[#6B3F5B] hover:underline">
-                        Live Preview
-                    </a>
+                <a [href]="liveUrl()" target="_blank" rel="noopener noreferrer"
+                    class="text-sm font-semibold text-[#6B3F5B] hover:underline">
+                    Live Preview
+                </a>
                 }
             </div>
         </div>

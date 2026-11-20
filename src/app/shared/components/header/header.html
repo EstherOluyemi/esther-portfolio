@@ -2,7 +2,7 @@
   <nav class="relative mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
 
     <a routerLink="/" (click)="closeMenu()" class="text-xl font-bold text-[#6B3F5B]">
-      Esther.
+      Esther O. Oluyemi
     </a>
 
     <div class="hidden items-center gap-8 md:flex">
@@ -28,7 +28,7 @@
     </div>
 
     <button type="button" (click)="toggleTheme()" aria-label="Toggle colour theme"
-      class="hidden rounded-full border border-[#EAE3E8] p-2 text-[#6B3F5B] transition-colors hover:bg-[#F1ECF7] md:block">
+      class="hidden cursor-pointer rounded-full border border-[#EAE3E8] p-2 text-[#6B3F5B] transition-colors hover:bg-[#F1ECF7] md:block">
       @if (theme() === 'light') {
       <svg lucideMoon [size]="20"></svg>
       } @else {
@@ -37,7 +37,7 @@
     </button>
 
     <button type="button" (click)="toggleMenu()" [attr.aria-expanded]="isMenuOpen()" aria-label="Toggle navigation menu"
-      class="rounded-md border border-[#EAE3E8] px-3 py-2 text-[#6B3F5B] md:hidden">
+      class="cursor-pointer rounded-md border border-[#EAE3E8] px-3 py-2 text-[#6B3F5B] md:hidden">
       @if (isMenuOpen()) {
       <svg lucideX [size]="22"></svg>
       } @else {
@@ -69,7 +69,7 @@
       </a>
 
       <button type="button" (click)="toggleTheme()" aria-label="Toggle colour theme"
-        class="w-fit rounded-full border border-[#EAE3E8] p-2 text-[#6B3F5B] transition-colors hover:bg-[#F1ECF7]">
+        class="w-fit cursor-pointer rounded-full border border-[#EAE3E8] p-2 text-[#6B3F5B] transition-colors hover:bg-[#F1ECF7]">
         @if (theme() === 'light') {
         <svg lucideMoon [size]="20"></svg>
         } @else {
